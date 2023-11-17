@@ -1,0 +1,213 @@
+:root {
+    font-family: poppins, sans-serif;
+    color:white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-image: url(./images/bg-intro-desktop.png);
+    background-color: hsl(0, 100%, 74%) ;
+    height:100vh;
+    padding:0 1em;
+}
+
+body {
+    height:100%;
+    margin:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.container > *{
+/* border:2px solid white; */
+}
+
+/* ----- FULL CONTAINER ----- */
+/* ----- FULL CONTAINER ----- */
+.container {
+    display:flex;
+    /* flex-direction:column; */
+    /* flex-wrap: wrap; */
+    gap:2em;
+    margin-top:70px;
+    margin-bottom:70px;
+}
+
+/* ----- LEFT/FIRST BLOCK ----- */
+/* ----- LEFT/FIRST BLOCK ----- */
+
+.block1 {
+    /* flex-grow: 1; */
+    min-width:350px;
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+h1{
+    font-size:50px;
+    line-height:1.2em;
+}
+/* ----- RIGHT/SECOND BLOCK ----- */
+/* ----- RIGHT/SECOND BLOCK ----- */
+
+.block2 {
+    /* flex-grow: 1; */
+
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    text-align:center;
+    gap:1.5em;
+    min-width:360px;
+    max-width:480px;
+}
+
+.purple {
+    background-color: hsl(248, 32%, 49%);
+    padding:1em 4em;
+    border-radius:10px;
+}
+.purple > span {
+    font-weight:700;
+}
+
+.purple, form {
+    box-shadow:0 8px 0 0 rgba(0, 0, 0, 0.137);
+}
+
+/* ---- FORM ---- */
+/* ---- FORM ---- */
+
+form {
+    background-color:white;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    padding:2em;
+    gap:1em;
+
+    /* align-items:stretch; */
+    /* justify-content:stretch; */
+}
+
+/* ----- I N P U T   E L E M E N T S ----- */
+/* ----- I N P U T   E L E M E N T S ----- */
+form > div {
+    padding:0;
+    margin:0;
+    position:relative;
+    /* border:1px solid green; */
+}
+
+input {
+    /* display:block; */
+    border-radius:5px;
+    border:1px solid hsl(246, 25%, 77%);
+    padding:1em 2em;
+    font-weight:600;
+    font-family:poppins;
+    color:hsl(249, 10%, 26%);
+    width:100%;
+}
+
+/* ----- F A I L    S T A T E ----- */
+/* ----- F A I L    S T A T E ----- */
+
+/* ---- INPUTS WITH ERROR ---- */
+.fail  {
+    border: 2.5px solid hsl(0, 100%, 74%);
+    display:block;
+}
+.fail::placeholder{
+    color: hsl(0, 100%, 74%);
+}
+/* ---- ERROR MESSAGES ---- */
+.fail + .error {
+    display:block;
+}
+
+.error {
+    color:hsl(0, 100%, 74%);
+    margin:0;
+    padding:0;
+    font-size:10px;
+    font-weight:500;
+    text-align:right;
+    display:none;
+}
+/* ---- ERROR ICONS ---- */
+.errIcon {
+    position:absolute;
+    right: 1.5em;
+    top:13px;
+    opacity:0;
+}
+
+.fail ~ .errIcon{
+    opacity:1;
+}
+/* ----- S U B M I T   B U T T O N ------ */
+/* ----- S U B M I T   B U T T O N ------ */
+
+input[type="submit"] {
+    background-color:hsl(154, 59%, 51%);
+    box-shadow:inset 0 -5px 0 0 hsl(154, 60%, 46%);
+    border:none;
+    color:white;
+    text-transform:uppercase;
+    font-weight:500;
+    font-size:16px;
+    height:48.66px;
+    padding:0;
+}
+input[type="submit"]:hover{
+    cursor:pointer;
+    background-color:hsl(154, 70%, 59%);
+}
+
+.footnote {
+    color: hsl(246, 25%, 77%);
+    font-size:10px;
+    margin:0;
+}
+
+.terms {
+    font-weight:700;
+    color:hsl(0, 100%, 74%);
+}
+.terms:hover{
+    cursor:pointer;
+    color:hsl(0, 100%, 66%);
+}
+/* - Red: hsl(0, 100%, 74%) 
+- Green: hsl(154, 59%, 51%)
+
+- Blue: hsl(248, 32%, 49%)
+
+- Dark Blue: hsl(249, 10%, 26%) 
+- Grayish Blue: hsl(246, 25%, 77%) */
+
+@media (max-width:430px) {
+    html {
+        background-image: url(./images/bg-intro-mobile.png);
+        height:unset;
+    }
+
+    .container {
+        flex-direction:column;
+        min-width:270px;
+    }
+
+    .block1, .block2{
+        min-width:260px;
+    }
+
+    .block1  {
+        text-align:center;
+    }
+}
